@@ -1,0 +1,25 @@
+<!-- _includes/remove-footer.html -->
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  try {
+    // find any element that contains the word "Chirpy" or the Arabic phrase "باستخدام"
+    var candidates = Array.from(document.querySelectorAll('footer, .site-footer, .copyright, .footer, p, a'));
+    candidates.forEach(function(el){
+      if (el && el.textContent && (el.textContent.includes('Chirpy') || el.textContent.includes('باستخدام') || el.textContent.includes('السمة'))) {
+        // remove the nearest footer-like ancestor if found
+        var footerEl = el.closest('footer') || el.closest('.site-footer') || el.closest('.footer') || el;
+        if (footerEl) footerEl.remove();
+      }
+    });
+  } catch (e) {
+    console.error('remove-footer script error', e);
+  }
+});
+</script>
+
+<style>
+/* fallback: hide common footer selectors forcibly */
+footer.site-footer, .site-footer, .footer, footer, .copyright, .footer .copyright {
+  display: none !important;
+}
+</style>

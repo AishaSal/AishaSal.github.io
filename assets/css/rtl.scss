@@ -1,0 +1,30 @@
+---
+---
+
+html {
+  direction: rtl;
+  text-align: right;
+}
+
+body {
+  direction: rtl;
+  text-align: right;
+}
+
+.post-content {
+  direction: rtl;
+  text-align: right;
+}
+
+.sidebar {
+  direction: rtl;
+}
+
+.navbar, .header, .footer {
+  direction: rtl;
+  text-align: right;
+}
+
+.footer .copyright {
+  display: none !important;
+}
